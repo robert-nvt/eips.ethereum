@@ -1,0 +1,1 @@
+{"id":2612,"beginner":"EIP-2612 lets you approve tokens with a signature — no separate transaction, no extra gas.","intermediate":"It adds a permit() function that accepts an EIP-712 signature, replacing the classic approve transaction.","advanced":"permit uses per-owner nonces and deadlines to prevent replay, enabling single-transaction approve+swap flows and gas sponsorship."}

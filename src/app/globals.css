@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-slate-200 antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79, 70, 229, 0.18), transparent),
+      radial-gradient(ellipse 60% 50% at 100% 0%, rgba(6, 182, 212, 0.10), transparent);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(79, 70, 229, 0.4);
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-card/70 backdrop-blur-xl border border-white/[0.06];
+  }
+
+  .glass-card {
+    @apply glass rounded-2xl shadow-card transition-all duration-300;
+  }
+
+  .neon-border {
+    position: relative;
+  }
+
+  .neon-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.5), rgba(6, 182, 212, 0.25), transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #818cf8, #22d3ee 60%, #c4b5fd);
+  }
+
+  .stat-chip {
+    @apply glass rounded-xl px-4 py-3 flex flex-col gap-0.5;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.2) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 9999px;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Light theme overrides */
+.light body {
+  @apply bg-slate-50 text-slate-800;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79, 70, 229, 0.10), transparent);
+}
+.light .glass {
+  @apply bg-white/80 border-slate-200;
+}

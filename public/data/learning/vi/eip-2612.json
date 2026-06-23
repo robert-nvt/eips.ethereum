@@ -1,0 +1,1 @@
+{"id":2612,"beginner":"EIP-2612 cho phép phê duyệt token bằng chữ ký — không cần giao dịch riêng, không tốn thêm gas.","intermediate":"Nó thêm hàm permit() nhận chữ ký EIP-712, thay cho giao dịch approve truyền thống.","advanced":"permit dùng nonce theo từng chủ sở hữu và deadline để chống phát lại, cho phép luồng approve+swap trong một giao dịch và tài trợ gas."}
